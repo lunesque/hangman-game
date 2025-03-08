@@ -1,5 +1,4 @@
 import { Form } from './components/Form';
-import { FormV2 } from './components/FormV2';
 import { Word } from './components/Word';
 import { Hangman } from './components/Hangman';
 import { useState } from 'react';
@@ -32,8 +31,7 @@ function App() {
           <div className="inputZone">
             <p>Guess counter : {guess.length}</p>
             <p>Mistake counter : {mistakeCounter}</p>
-            {/* <Form guess={guess} setGuess={setGuess} word={word}/> */}
-            <FormV2 guess={guess} setGuess={setGuess} word={word} mistakeCounter={mistakeCounter} setMistakeCounter={setMistakeCounter}/>
+            <Form guess={guess} setGuess={setGuess} word={word} mistakeCounter={mistakeCounter} setMistakeCounter={setMistakeCounter}/>
           </div>
         </div>
       </div>
