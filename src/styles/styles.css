@@ -1,32 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-:root {
-  --color-light-gray: #f5f5f5;
-  --color-white: #ffffff;
-  --color-dark: #333333;
-  --color-acier: #778289;
-  --color-combat: #30336b;
-  --color-dragon: #ffeaa7;
-  --color-eau: #0190ff;
-  --color-electrik: #ffc801;
-  --color-fee: #ff0069;
-  --color-feu: #f0932b;
-  --color-glace: #74b9ff;
-  --color-insecte: #26de81;
-  --color-normal: #95afc0;
-  --color-plante: #00b894;
-  --color-poison: #6c5ce7;
-  --color-psy: #a29bfe;
-  --color-roche: #2d3436;
-  --color-sol: #efb549;
-  --color-spectre: #a55eea;
-  --color-tenebres: #1e2122;
-  --color-vol: #399d9d;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--color-light-gray);
 }
 
 strong {
@@ -34,23 +9,21 @@ strong {
 }
 
 .site-container {
-  width: 100%;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
   margin: 0 auto;
-  padding: 50px 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .game {
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.main-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  margin: 40px 0;
 }
 
 /* Hangman */
@@ -60,10 +33,16 @@ strong {
   align-items: center;
   justify-content: center;
   margin: 20px 40px;
+  flex-grow: 1;
 }
 
 .hangman svg {
   stroke-width: 2;
+}
+
+.wordZone {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Keyboard and inputs */
@@ -135,7 +114,7 @@ strong {
   content: "_";
   position: absolute;
   width: 100%;
-  background-color: var(--color-light-gray);
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,7 +130,7 @@ strong {
 }
 
 .button {
-  display: inline-block;
+  background-color: white;
   border: solid 1px;
   padding: 14px;
 }

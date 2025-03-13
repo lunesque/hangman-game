@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const Word = ({ guess, word, setWord}) => {
+export const Word = ({ refresh, guess, setGuess, word, setWord}) => {
 
     useEffect(() => {
         fetch('http://localhost:3333/', {
@@ -12,19 +12,24 @@ export const Word = ({ guess, word, setWord}) => {
             .then((res) => res.json())
             .then((data) => {
                 setWord({word: data.word, letters: data.word.split("")});
+                setGuess([]);
             })
           }
-        , []);    
-            
+        , [refresh]);    
+
     
     return (
-        <div className="word">
-            {word.letters.map((letter) => {
-                if (guess.includes(word.word) || guess.includes(letter)) {
-                    return (<p className="letter letter-show">{letter}</p>)
-                } else 
-                return (<p className="letter letter-hidden">{letter}</p>)
-            })}
+        <div class="wordZone">
+            <p className="word">
+                {word.letters.map((letter) => {
+                    if (guess.includes(word.word) || guess.includes(letter)) {
+                        return (<span className="letter letter-show">{letter}</span>)
+                    } else 
+                    return (<p className="letter letter-hidden">{letter}</p>)
+                })}
+            </p>
         </div>
+
+
     );
 }

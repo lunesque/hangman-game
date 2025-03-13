@@ -36,7 +36,7 @@ export const Form = ({ guess, setGuess, word, mistakeCounter, setMistakeCounter}
 
     return (
         <form className="hangmanForm" name="hangmanForm">
-            <input type="text" name="guess" id="guess" value={inputValue} onChange={handleChange}/>
+            <input type="text" name="guess" id="guess" value={inputValue} onChange={handleChange} autoFocus/>
             <div className="keyboard">
             {keys.map((row) => {
                 return (
@@ -68,7 +68,7 @@ export const Form = ({ guess, setGuess, word, mistakeCounter, setMistakeCounter}
             })}
             </div>
             
-            <div className="button" onClick={handleClick}>Submit Guess</div>
+            <button className="button" onClick={handleClick}>Submit Guess</button>
             <input id="hidden-button" type="submit" disabled={true}/>
         </form>
     );
