@@ -68,7 +68,7 @@ export const Form = ({ guess, setGuess, word, mistakeCounter, setMistakeCounter}
             })}
             </div>
             
-            <button className="button" onClick={handleClick}>Submit Guess</button>
+            <div className="button" onClick={handleClick}>Submit Guess</div>
             <input id="hidden-button" type="submit" disabled={true}/>
         </form>
     );
