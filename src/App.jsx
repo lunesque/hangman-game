@@ -20,19 +20,21 @@ function App() {
 
   return (
       <div className="site-container">
-        <h1>Hangman</h1>
+        <h1>Hangman by Hang :3</h1>
         <button className="button" onClick={handleClick}>New game</button>
+
         <div className='game'>
           <div className='hangman'>
             <Hangman mistakeCounter={mistakeCounter}/>
-          {(guess.includes(word.word) || word.letters.every((l) => guess.some((g) => g === l))) && mistakeCounter<7 ? 
-            <p>You won :D</p> : null
+            {(guess.includes(word.word) || word.letters.every((l) => guess.some((g) => g === l))) && mistakeCounter<7 ? 
+              <p>You won :D</p> : null
             }
-          {mistakeCounter >= 7 ?
-            <p>You lost :c</p> : null
-          }
-          <Word refresh={refresh} guess={guess} setGuess={setGuess} word={word} setWord={setWord} />
+            {mistakeCounter >= 7 ?
+              <p>You lost :c</p> : null
+            }
+            <Word refresh={refresh} guess={guess} setGuess={setGuess} word={word} setWord={setWord} />
           </div>
+
           <div className="inputZone">
             <p>Guess counter : {guess.length}</p>
             <p>Mistake counter : {mistakeCounter}</p>
