@@ -19,13 +19,13 @@ export const Word = ({ refresh, guess, setGuess, word, setWord}) => {
 
     
     return (
-        <div class="wordZone">
+        <div className="wordZone">
             <p className="word">
                 {word.letters.map((letter) => {
                     if (guess.includes(word.word) || guess.includes(letter)) {
                         return (<span className="letter letter-show">{letter}</span>)
                     } else 
-                    return (<p className="letter letter-hidden">{letter}</p>)
+                    return (<span className="letter letter-hidden">{letter}</span>)
                 })}
             </p>
         </div>
