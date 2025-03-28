@@ -25,10 +25,10 @@ export const Form = ({ guess, setGuess, word, mistakeCounter, setMistakeCounter}
     const handleClick = () => {
         if (!guess.includes(inputValue) && inputValue!='') {
             setGuess([...guess, inputValue]);
+            if (!(word.letters.includes(inputValue) || word.word == inputValue)) {
+                setMistakeCounter(mistakeCounter+1);
+            }
         } 
-        if (!(word.letters.includes(inputValue) || word.word == inputValue)) {
-            setMistakeCounter(mistakeCounter+1);
-        }
         setInputValue('');
     }
 
